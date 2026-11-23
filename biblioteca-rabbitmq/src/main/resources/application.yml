@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: biblioteca
+  datasource:
+    url: jdbc:postgresql://localhost:5432/biblioteca
+    username: biblioteca
+    password: biblioteca
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: correlated
+    listener:
+      simple:
+        acknowledge-mode: manual   # ack só depois que o efeito foi gravado
+        prefetch: 1                # distribui melhor entre instâncias concorrentes
+
+app:
+  instancia: ${HOSTNAME:local}
+  processamento-ms: 0              # atraso simulado (usado nas Estatísticas)
+
+---
+spring:
+  config:
+    activate:
+      on-profile: produtor
+server:
+  port: 8080
+---
+spring:
+  config:
+    activate:
+      on-profile: circulacao
+server:
+  port: 8081
+---
+spring:
+  config:
+    activate:
+      on-profile: comunicacao
+server:
+  port: 8082
+---
+spring:
+  config:
+    activate:
+      on-profile: multas
+server:
+  port: 8083
+---
+spring:
+  config:
+    activate:
+      on-profile: auditoria
+server:
+  port: 8084
+---
+spring:
+  config:
+    activate:
+      on-profile: estatisticas
+server:
+  port: 8085

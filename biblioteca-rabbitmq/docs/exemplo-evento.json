@@ -1,0 +1,14 @@
+{
+  "eventId": "7c1f6a52-3a0e-4c55-9d0f-2a5d4f7e9b10",
+  "tipo": "EMPRESTIMO_REGISTRADO",
+  "ocorridoEm": "2026-11-18T13:45:10.123Z",
+  "dados": {
+    "emprestimoId": "EMP-421",
+    "exemplarId": "EX-5530",
+    "titulo": "Sistemas Distribuidos",
+    "categoria": "Computacao",
+    "leitorId": "L-217",
+    "leitorNome": "Ana Souza",
+    "dataPrevistaDevolucao": "2026-12-02"
+  }
+}
